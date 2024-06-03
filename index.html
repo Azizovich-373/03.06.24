@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .container_span {
+            width: 70%;
+            margin: 50px auto;
+
+            .item {
+                width: 100%;
+                background-color: #c4c4c4;
+                height: 100%;
+                max-height: 55px;
+                overflow: hidden;
+                transition: .5s ease;
+
+                .top {
+                    width: 100%;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    padding: 10px 20px;
+
+                    span {
+                        font-size: 24px;
+                    }
+
+                    button {
+                        all: unset;
+                        cursor: pointer;
+                        border-radius: 100%;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        padding: 4px;
+                        transition: .5s ease;
+
+                        &:hover {
+                            background-color: gray;
+                        }
+                    }
+                }
+
+                p {
+                    padding: 10px 20px;
+                }
+
+
+            }
+            .active {
+                height: 100% !important;
+                max-height: 250px !important;
+
+                button {
+                    rotate: 180deg !important;
+                }
+            }
+
+        }
+
+    </style>
+    <title>Apple Store</title>
+    <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="menu">
+            <a href="https://www.apple.com/" data-globalnav-item-name="apple" data-analytics-title="apple home" aria-label="Apple" class="globalnav-link    globalnav-link-apple" data-autom="gn_apple"><span class="globalnav-image-regular globalnav-link-image"><svg height="44" viewBox="0 0 14 44"     width="14" xmlns="http://www.w3.org/2000/svg">
+                <path d="m13.0729 17.6825a3.61 3.61 0 0 0 -1.7248 3.0365 3.5132 3.5132 0 0 0 2.1379 3.2223 8.394 8.394 0 0 1 -1.0948 2.2618c-.6816.9812-1.3943 1.9623-2.4787 1.9623s-1.3633-.63-2.613-.63c-1.2187 0-1.6525.6507-2.644.6507s-1.6834-.9089-2.4787-2.0243a9.7842 9.7842 0 0 1 -1.6628-5.2776c0-3.0984 2.014-4.7405 3.9969-4.7405 1.0535 0 1.9314.6919 2.5924.6919.63 0 1.6112-.7333 2.8092-.7333a3.7579 3.7579 0 0 1 3.1604 1.5802zm-3.7284-2.8918a3.5615 3.5615 0 0 0 .8469-2.22 1.5353 1.5353 0 0 0 -.031-.32 3.5686 3.5686 0 0 0 -2.3445 1.2084 3.4629 3.4629 0 0 0 -.8779 2.1585 1.419 1.419 0 0 0 .031.2892 1.19 1.19 0 0 0 .2169.0207 3.0935 3.0935 0 0 0 2.1586-1.1368z"></path></svg></span><span class="globalnav-image-compact globalnav-link-image"><svg height="48" viewBox="0 0 17 48" width="17" xmlns="http://www.w3.org/2000/svg"></svg></a>
+            <a href="#">Store</a>
+            <a href="https://azizovich-373.github.io/Mac-Apple/">Mac</a>
+            <a href="#">iPad</a>
+            <a href="#">iPhone</a>
+            <a href="#">Watch</a>
+            <a href="#">Vision</a>
+            <a href="#">AirPods</a>
+            <a href="#">TV & Home</a>
+            <a href="#">Intertainment</a>
+            <a href="#">Accessories</a>
+            <a href="#">Support</a>
+            <a role="button" id="globalnav-menubutton-link-search" class="globalnav-link globalnav-link-search" href="/search" data-topnav-flyout-trigger-regular="" data-topnav-flyout-trigger-compact="" aria-label="Search apple.com" aria-expanded="false" data-analytics-title="open - search field"><span class="globalnav-image-regular"><svg xmlns="http://www.w3.org/2000/svg" width="15px" height="44px" viewBox="0 0 15 44">
+                <path d="M14.298,27.202l-3.87-3.87c0.701-0.929,1.122-2.081,1.122-3.332c0-3.06-2.489-5.55-5.55-5.55c-3.06,0-5.55,2.49-5.55,5.55 c0,3.061,2.49,5.55,5.55,5.55c1.251,0,2.403-0.421,3.332-1.122l3.87,3.87c0.151,0.151,0.35,0.228,0.548,0.228 s0.396-0.076,0.548-0.228C14.601,27.995,14.601,27.505,14.298,27.202z M1.55,20c0-2.454,1.997-4.45,4.45-4.45 c2.454,0,4.45,1.997,4.45,4.45S8.454,24.45,6,24.45C3.546,24.45,1.55,22.454,1.55,20z"></path>
+              </svg> </span></a>
+            <a role="button" id="globalnav-menubutton-link-bag" href="/shop/bag" aria-label="Shopping Bag" data-globalnav-item-name="bag" data-topnav-flyout-trigger-regular="" data-topnav-flyout-trigger-compact="" data-analytics-title="open - bag" class="globalnav-link globalnav-link-bag" data-autom="gn_bag"><span class="globalnav-image-regular"><svg height="44" viewBox="0 0 14 44" width="14" xmlns="http://www.w3.org/2000/svg">
+                <path d="m11.3535 16.0283h-1.0205a3.4229 3.4229 0 0 0 -3.333-2.9648 3.4229 3.4229 0 0 0 -3.333 2.9648h-1.02a2.1184 2.1184 0 0 0 -2.117 2.1162v7.7155a2.1186 2.1186 0 0 0 2.1162 2.1167h8.707a2.1186 2.1186 0 0 0 2.1168-2.1167v-7.7155a2.1184 2.1184 0 0 0 -2.1165-2.1162zm-4.3535-1.8652a2.3169 2.3169 0 0 1 2.2222 1.8652h-4.4444a2.3169 2.3169 0 0 1 2.2222-1.8652zm5.37 11.6969a1.0182 1.0182 0 0 1 -1.0166 1.0171h-8.7069a1.0182 1.0182 0 0 1 -1.0165-1.0171v-7.7155a1.0178 1.0178 0 0 1 1.0166-1.0166h8.707a1.0178 1.0178 0 0 1 1.0164 1.0166z"></path></svg></span><svg height="48" viewBox="0 0 17 48" width="17" xmlns="http://www.w3.org/2000/svg">
+                </svg></class=></a>
+        </nav>
+    </header>
+    <section class="b_header">
+        <div class="grid-b-header">
+            <div class="elem-b">
+                <h1>Carrier Deals at Apple</h1>
+                <a id="dialog_open" href="#">See all deals -></a>
+            </div>
+            <div class="elem">
+                <div class="box"><img src="./img/b-header-3.png" alt=""></div>
+                <h2>Pay as low as $0 after trade-in.footnoteΔ</h2>
+            </div>
+            <div class="elem">
+                <div class="box"><img src="./img/b-header-1.png" alt=""></div>
+                <h2>Pay as low as $8.30/mo after trade-in.footnoteº</h2>
+            </div>
+            <div class="elem">
+                <div class="box"><img src="./img/b-header-2.png" alt=""></div>
+                <h2>Pay as low as $4.69/mo. after trade-in.footnoteΔΔ</h2>
+            </div>
+        </div>
+    </section>
+    <dialog>
+        <button class="close_dialog">
+            <svg width="21" height="21" class="as-svgicon as-svgicon-close as-svgicon-tiny as-svgicon-closetiny" role="img" aria-hidden="true"><path fill="none" d="M0 0h21v21H0z"></path><path d="m12.12 10 4.07-4.06a1.5 1.5 0 1 0-2.11-2.12L10 7.88 5.94 3.81a1.5 1.5 0 1 0-2.12 2.12L7.88 10l-4.07 4.06a1.5 1.5 0 0 0 0 2.12 1.51 1.51 0 0 0 2.13 0L10 12.12l4.06 4.07a1.45 1.45 0 0 0 1.06.44 1.5 1.5 0 0 0 1.06-2.56Z"></path></svg>
+        </button>
+        <div class="container_dialog">
+            <h2>Incredible carrier deals? <br> We’ve got ‘em right here. 😎</h2>
+            <h3>When you buy your new iPhone from Apple, you can still get a sweet carrier deal. <br> Just select your trade-in to see how much you can save. Have questions? No worries, <br> <a href="#">our iPhone Specialists are here to help.</a> </h3>
+            <div class="box_btn_dialog">
+                <button class="btn_dialog"><img src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/att-special-deals?wid=306&hei=132&fmt=png-alpha&.v=1702312468554" alt=""></button>
+                <button class="btn_dialog"><img src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/tmobile-special-deals?wid=345&hei=132&fmt=png-alpha&.v=1658193315039" alt=""></button>
+                <button class="btn_dialog"><img src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/verizon-special-deals?wid=336&hei=132&fmt=png-alpha&.v=1658193314689" alt=""></button>
+            </div>
+            <select name="" id="" >
+                <option value="iPhone 13 Pro">iPhone 13 Pro </option>
+                <option value="iPhone 14 Pro">iPhone 14 Pro </option>
+                <option value="iPhone 15 Pro">iPhone 15 Pro </option>
+            </select>
+            <h4>For existing and new AT&T customers</h4>
+        </div>
+        <div class="container_span">
+            <div class="item">
+                <div class="top">
+                    <span>iPhone 15</span>
+                    <button>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                    </button>
+                </div>
+                <p>Cost
+                    iPhone 15 Pro
+                    From $0.00/mo.per month
+                    over 36 mo.months after trade-in footnote Δ
+                    Up to three monthly payments of $27.75 before AT&T bill credits begin.
+                    $999.00
+                    Total amount financed at 0% APR
+                    This is the total cost of your new iPhone before AT&T bill credits.
+                    Credits and Discounts
+                    $999.00 footnote Δ
+                    Total bill credits for: iPhone 13 Pro
+                    Bill credits will be applied to your AT&T bill over 36 months and will begin within three bill cycles. If you have any questions about your billing, contact AT&T.
+                    How to Get this Deal
+                    Trade in an eligible smartphone.
+                    Select AT&T Installment Plans as your monthly payment option — available to new and existing AT&T customers who want to upgrade or add a line.
+                    Activate with an eligible AT&T rate plan.</p>
+            </div>
+            <div class="item">
+                <div class="top">
+                    <span>iPhone 15 Pro</span>
+                    <button>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                    </button>
+                </div>
+                <p>Cost
+                    iPhone 15 Pro Max
+                    From $5.53/mo.per month
+                    over 36 mo.months after trade-in footnote Δ
+                    Up to three monthly payments of $33.31 before AT&T bill credits begin.
+                    $1,199.00
+                    Total amount financed at 0% APR
+                    This is the total cost of your new iPhone before AT&T bill credits.
+                    Credits and Discounts
+                    $1,000.00 footnote Δ
+                    Total bill credits for: iPhone 13 Pro
+                    Bill credits will be applied to your AT&T bill over 36 months and will begin within three bill cycles. If you have any questions about your billing, contact AT&T.
+                    How to Get this Deal
+                    Trade in an eligible smartphone.
+                    Select AT&T Installment Plans as your monthly payment option — available to new and existing AT&T customers who want to upgrade or add a line.
+                    Activate with an eligible AT&T rate plan.</p>
+            </div>
+            <p>
+                ∆ AT&T iPhone 15 Special Deal: Monthly price reflects net monthly payment, after application of AT&T trade-in credit applied over 36 months with purchase of an iPhone 15 Pro, iPhone 15 Pro Max, or iPhone 15 and trade-in of eligible smartphone. Receive credit with purchase of an iPhone 15 Pro or iPhone 15 Pro Max of either $1000, $700, or $350 (based upon the model and condition of your trade-in smartphone). Receive credit with purchase of an iPhone 15 of either $700 or $350 (based upon the model and condition of your trade-in smartphone). Max bill credits will not exceed the cost of the device. Requires upgrade of an existing line or activation of a new line and purchase of a new iPhone 15 Pro, iPhone 15 Pro Max, or iPhone 15 on qualifying 36 month 0% APR installment plan, subject to carrier credit qualification. AT&T Installment Plan with Next Up is not eligible for this promotion. $0 down for well qualified customers only, or down payment may be required and depends on a variety of factors. Tax on full retail price due at sale. Requires activation on eligible unlimited plan. If you cancel eligible wireless service, credits will stop and you will owe the remaining device balance. Activation/Upgrade Fee: $35. Trade in device may not be on existing installment plan. Bill credits are applied as a monthly credit over the 36 month installment plan. Credits start within 3 bills. Will receive catchup credits once credits start. Wireless line must be on an installment agreement, active, and in good standing for 30 days to qualify. Installment agreement starts when device is shipped. To get all credits, device must remain on agreement for entire term and you must keep eligible service on device for entire installment term. Limited time offer; subject to change. Limits: one trade-in per qualifying purchase and one credit per line. May not be combinable with other offers, discounts, or credits. Purchase, financing, other limits, and restrictions apply. Price for iPhone 15 and iPhone 15 Plus includes $30 AT&T connectivity discount. Activation required.
+                <br>
+                <br>
+                <br>
+                <br>
+
+                ◊◊ Trade‑in values will vary based on the condition, year, and configuration of your eligible trade‑in device. Not all devices are eligible for credit. You must be at least the age of majority to be eligible to trade in for credit or for an Apple Gift Card. Trade‑in value may be applied toward qualifying new device purchase, or added to an Apple Gift Card. Actual value awarded is based on receipt of a qualifying device matching the description provided when estimate was made. Sales tax may be assessed on full value of a new device purchase. In‑store trade‑in requires presentation of a valid photo ID (local law may require saving this information). Offer may not be available in all stores, and may vary between in-store and online trade‑in. Some stores may have additional requirements. Apple or its trade‑in partners reserve the right to refuse, cancel, or limit quantity of any trade‑in transaction for any reason. More details are available from Apple’s trade‑in partner for trade‑in and recycling of eligible devices. Restrictions and limitations may apply.
+            </p>
+            <img id="img-women" src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/step1-chat-specialist?wid=108&hei=108&fmt=png-alpha&.v=1655399908966" alt="">
+            <h5>Have more questions?</h5>
+            <a href="#">Ask an iPhone Specialist</a>
+        </div>
+    </dialog>
+    <div class="container">
+         <section class="center">
+            <div class="item">
+                <h1>Buy iPhone 15 Pro</h1>
+                <h2>From $999 or $41.62/mo. for 24 mo.*</h2>
+            </div>
+            <div class="item_right">
+                <button class="one">Get $60-$650 for your trade-in</button> <br>
+                <button class="two">Get 3% Daily Cash back with Apple Card </button>
+            </div>
+         </section>
+         <section class="iphone">
+            <div class="flex-iphone">
+                <div class="item-iphone-a">
+
+                </div>
+                <div class="item-iphone-b">
+                    <h1>Model. <a href="#"> Which is best for you?</a></h1>
+                    <button data-iphone="" class="btn">
+                        <div class="grid-btn-iphone">
+                            <div class="elememt">
+                                <h2>iPhone 15 Pro</h2>
+                                <h3>6.1-inch display¹</h3>
+                            </div>
+                            <div class="elememt-b">
+                                <p>
+                                    From $999 <br>
+                                    or $41.62/mo. <br> 
+                                    for 24 mo.*
+                                </p>
+                            </div>
+                        </div>
+                    </button>
+                    <button data-iphone="" class="btn">
+                        <div class="grid-btn-iphone">
+                            <div class="elememt">
+                                <h2>iPhone 15 Pro Max</h2>
+                                <h3>6.7-inch display¹</h3>
+                            </div>
+                            <div class="elememt-b">
+                                <p>
+                                    From $1199 <br>
+                                    or $49.95/mo. <br> 
+                                    for 24 mo.*
+                                </p>
+                            </div>
+                        </div>
+                    </button>
+                    <button class="btn-a">
+                        <h2> 
+                            Need help choosing a model? <br>
+                            Explore the differences in screen size and <br>
+                            battery life.
+                        </h2>
+                    </button>
+                    <div class="iphone-text">
+                        <h2>Finish. <a href="#"> Pick your favorite.</a></h2>
+                        <h3>Color </h3>
+                        <div class="grid-color">
+                            <button data-color="natural" class="colors natural"></button>
+                            <button data-color="blue" class="colors blue"></button>
+                            <button data-color="white" class="colors white"></button>
+                            <button data-color="black" class="colors black"></button>
+                        </div>
+                    </div>
+                    <div class="iphone-text-2">
+                        <h4> Storage. <a href="#">How much space do you need?</a></h4>
+                    </div>
+                    <button data-storage="" class="btn">
+                        <div class="grid-btn-iphone">
+                            <div class="elememt">
+                                <h2>128GB²</h2>
+                            </div>
+                            <div class="elememt-b">
+                                <p>
+                                    From $999 <br>
+                                    or $41.62/mo. <br> 
+                                    for 24 mo.*
+                                </p>
+                            </div>
+                        </div>
+                    </button>
+                    <button data-storage="" class="btn">
+                        <div class="grid-btn-iphone">
+                            <div class="elememt">
+                                <h2>256GB²</h2>
+                            </div>
+                            <div class="elememt-b">
+                                <p>
+                                    From $1009 <br>
+                                    or $45.79/mo. <br> 
+                                    for 24 mo.*
+                                </p>
+                            </div>
+                        </div>
+                    </button>
+                    <button data-storage="" class="btn">
+                        <div class="grid-btn-iphone">
+                            <div class="elememt">
+                                <h2>512GB²</h2>
+                            </div>
+                            <div class="elememt-b">
+                                <p>
+                                    From $1299 <br>
+                                    or $54.12/mo. <br> 
+                                    for 24 mo.*
+                                </p>
+                            </div>
+                        </div>
+                    </button>
+                    <button data-storage="" class="btn">
+                        <div class="grid-btn-iphone">
+                            <div class="elememt">
+                                <h2>1TB²</h2>
+                            </div>
+                            <div class="elememt-b">
+                                <p>
+                                    From $1499 <br>
+                                    or $62.45/mo. <br> 
+                                    for 24 mo.*
+                                </p>
+                            </div>
+                        </div>
+                    </button>
+                    <div class="video-box">
+                        <div class="box-v"></div>
+                        <div class="box-j">
+                            <h3>Not sure how much <br> storage to get?</h3>
+                            <h4>Get a better understanding <br> of how much space you'll <br> need.</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+         </section>
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>
